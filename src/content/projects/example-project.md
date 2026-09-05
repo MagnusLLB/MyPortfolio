@@ -5,7 +5,7 @@ coverImage: "/images/projects/example-project/cover.svg"
 coverImageAlt: "Screenshot of the example project's main screen"
 tags: ["React", "TypeScript"]
 date: 2026-01-15
-featured: true
+featured: false
 order: 1
 ---
 

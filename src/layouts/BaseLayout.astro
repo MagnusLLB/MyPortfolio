@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = 'Portfolio of projects and work.' } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="wrapper">
+				<a class="site-title" href="/">Magnus Bentsen</a>
+				<nav class="site-nav">
+					<a href="/">Projects</a>
+					<a href="/about">About</a>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<div class="wrapper">
+				<slot />
+			</div>
+		</main>
+		<footer class="site-footer">
+			<div class="wrapper">
+				&copy; {new Date().getFullYear()} Magnus Bentsen. Built with Astro.
+			</div>
+		</footer>
+	</body>
+</html>

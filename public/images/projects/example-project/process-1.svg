@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+	<rect width="1000" height="600" fill="#171a21"/>
+	<rect x="1" y="1" width="998" height="598" fill="none" stroke="#262b34" stroke-width="2"/>
+	<text x="50%" y="50%" font-family="Segoe UI, sans-serif" font-size="34" fill="#9aa1ac" text-anchor="middle">Process Image 1</text>
+	<text x="50%" y="58%" font-family="Segoe UI, sans-serif" font-size="18" fill="#9aa1ac" text-anchor="middle">e.g. an early wireframe, sketch, or first working version</text>
+</svg>

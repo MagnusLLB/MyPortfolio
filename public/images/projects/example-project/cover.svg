@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+	<defs>
+		<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#7dd3fc"/>
+			<stop offset="100%" stop-color="#0f1115"/>
+		</linearGradient>
+	</defs>
+	<rect width="1200" height="750" fill="url(#g)"/>
+	<text x="50%" y="52%" font-family="Segoe UI, sans-serif" font-size="48" fill="#0f1115" text-anchor="middle" font-weight="700">Cover Image</text>
+	<text x="50%" y="60%" font-family="Segoe UI, sans-serif" font-size="22" fill="#0f1115" text-anchor="middle">Replace with a screenshot of your project (1200x750 or similar)</text>
+</svg>

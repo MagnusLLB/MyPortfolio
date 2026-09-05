@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const allProjects = await getCollection('projects');
+
+const featured = allProjects
+	.filter((p) => p.data.featured)
+	.sort((a, b) => a.data.order - b.data.order || b.data.date.valueOf() - a.data.date.valueOf());
+
+const others = allProjects
+	.filter((p) => !p.data.featured)
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Your Name — Portfolio">
+	<section class="hero">
+		<h1>Hi, I'm Magnus.</h1>
+		<p>
+			I'm a student building things I'm proud of. Below is a selection of projects from my
+			studies and free time — click any of them to see how it was made.
+		</p>
+	</section>
+
+	<section>
+		<h2 class="section-title">Featured Projects</h2>
+		{
+			featured.length > 0 ? (
+				<div class="project-grid">
+					{featured.map((project) => (
+						<ProjectCard project={project} />
+					))}
+				</div>
+			) : (
+				<p>No featured projects yet — mark one with <code>featured: true</code>.</p>
+			)
+		}
+	</section>
+
+	{
+		others.length > 0 && (
+			<section style="margin-top: 3.5rem;">
+				<h2 class="section-title">More Projects</h2>
+				<div class="project-grid">
+					{others.map((project) => (
+						<ProjectCard project={project} />
+					))}
+				</div>
+			</section>
+		)
+	}
+</BaseLayout>

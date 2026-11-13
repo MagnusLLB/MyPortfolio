@@ -7,20 +7,20 @@ const allProjects = await getCollection('projects');
 
 const featured = allProjects
 	.filter((p) => p.data.featured)
-	.sort((a, b) => a.data.order - b.data.order || b.data.date.valueOf() - a.data.date.valueOf());
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf() || a.data.order - b.data.order);
 
 const others = allProjects
 	.filter((p) => !p.data.featured)
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout title="Magnus Bentsen — Portfolio">
+<BaseLayout title="Magnus Lund Bentsen — Portfolio">
 	<section class="hero">
 		<h1>Hi, I'm Magnus.</h1>
 		<p>
-			I'm a student building things I'm proud of. Below is a selection of projects from my
-			studies and free time — click any of them to see how it was made.
+			During my studies in IT-productdevelopment at Aarhus University i have been a part of a lot of projects. So, I've made this website to show a bit off...
 		</p>
+
 	</section>
 
 	<section>

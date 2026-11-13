@@ -1,10 +1,10 @@
 ---
-title: "VR Air Hockey: A Custom Controller Attachment"
+title: "Bachelor's Thesis: VR Air Hockey, an exploration of Haptics in VR"
 summary: "A multiplayer VR air hockey game built in Unity, paired with a 3D-printed controller attachment designed to make swinging a paddle feel physical."
 coverImage: "/images/projects/vr-air-hockey/cover.jpg"
 coverImageAlt: "A 3D-printed disc attachment clipped onto a Meta Quest controller"
 tags: ["Unity", "C#", "VR", "Meta Quest", "Photon Networking", "Product Design"]
-date: 2026-06-01
+date: 2022-06-01
 featured: true
 order: 0
 ---

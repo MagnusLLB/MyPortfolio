@@ -9,21 +9,46 @@ const { project } = Astro.props;
 const { title, summary, coverImage, coverImageAlt, tags } = project.data;
 ---
 
-<a class="project-card" href={`/projects/${project.id}`}>
-	<div class="thumb">
-		<img src={coverImage} alt={coverImageAlt} loading="lazy" />
-	</div>
-	<div class="card-body">
-		<h3>{title}</h3>
-		<p>{summary}</p>
-		{
-			tags.length > 0 && (
-				<div class="tag-list">
-					{tags.map((tag) => (
-						<span class="tag">{tag}</span>
-					))}
+<div class="project-slot">
+	<a class="project-card" href={`/projects/${project.id}`}>
+		<div class="thumb">
+			<img src={coverImage} alt={coverImageAlt} loading="lazy" />
+		</div>
+		<div class="card-body">
+			<h3>{title}</h3>
+			<div class="card-text">
+				<div class="card-text-inner">
+					<div class="card-text-content">
+						<p>{summary}</p>
+					</div>
 				</div>
-			)
-		}
+			</div>
+			{
+				tags.length > 0 && (
+					<div class="tag-list">
+						{tags.map((tag) => (
+							<span class="tag">{tag}</span>
+						))}
+					</div>
+				)
+			}
+		</div>
+	</a>
+
+	<!-- Invisible copy of the collapsed card. It reserves the slot's height so the card on top can expand without moving the page. -->
+	<div class="slot-spacer" aria-hidden="true">
+		<div class="thumb-spacer"></div>
+		<div class="card-body">
+			<h3>{title}</h3>
+			{
+				tags.length > 0 && (
+					<div class="tag-list">
+						{tags.map((tag) => (
+							<span class="tag">{tag}</span>
+						))}
+					</div>
+				)
+			}
+		</div>
 	</div>
-</a>
+</div>

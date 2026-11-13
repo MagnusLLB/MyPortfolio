@@ -46,14 +46,12 @@ See [project-template/README.md](./project-template/README.md) for the full walk
 2. Copy `project-template/template.md` to `src/content/projects/<slug>.md` and fill it in.
 3. Save — it shows up on the homepage automatically.
 
-`src/content/projects/example-project.md` is a filled-in example you can look at or delete once
-you have real projects in place.
+Any file in `src/content/projects/`, for example `holoform.md`, is a filled-in example to copy from.
 
 ## Before you publish
 
 - Replace "Your Name" and the contact links in [src/layouts/BaseLayout.astro](./src/layouts/BaseLayout.astro)
   and [src/pages/about.astro](./src/pages/about.astro).
-- Replace `example-project` with your real projects (or delete it).
 - Swap `public/favicon.svg` for your own icon if you'd like.
 
 ## Deploying
@@ -62,3 +60,10 @@ This is a static site — `npm run build` outputs plain HTML/CSS/JS to `./dist/`
 hosted for free on [Vercel](https://vercel.com), [Netlify](https://netlify.com), or
 [GitHub Pages](https://docs.astro.build/en/guides/deploy/github/). Vercel/Netlify are the easiest:
 connect the repo and they auto-detect Astro.
+
+## TODO
+
+- Add an explanation of what IT development is.
+- Personalise project journals.
+- Add more project journals.
+- Add a more personal flare to the layout.

@@ -1,10 +1,10 @@
 ---
-title: "Turning a Manual Quality Report into an Interactive Dashboard"
+title: "Quality Assurance Data Visualization for Arcane Tinman"
 summary: "An interactive dashboard that replaces a manually filled-in production quality spreadsheet with an at-a-glance view of grades across machines and defect causes over a full year."
 coverImage: "/images/projects/production-data-visualization/cover.png"
 coverImageAlt: "A timeline chart showing colored grade blocks for each production machine across a full year"
 tags: ["Data Visualization", "Python"]
-date: 2026-03-01
+date: 2023-06-01
 featured: true
 order: 1
 ---

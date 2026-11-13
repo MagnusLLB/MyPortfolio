@@ -1,10 +1,10 @@
 ---
-title: "DrAIve: A Custom-Bodied RC Car"
+title: "DrAIve: The RC Car You Teach How To Drive"
 summary: "A retrofitted RC car with custom electronics and a fully 3D-printed body featuring a hidden storage compartment, evolved from an early LEGO Mindstorms prototype."
 coverImage: "/images/projects/draive/cover.jpg"
 coverImageAlt: "Finished RC car with a custom 3D-printed grey and black body on green off-road tires"
 tags: ["3D Printing", "Arduino", "Electronics", "Product Design"]
-date: 2026-02-01
+date: 2021-06-01
 featured: true
 order: 2
 ---

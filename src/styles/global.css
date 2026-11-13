@@ -5,7 +5,7 @@
 	--text-muted: #9aa1ac;
 	--accent: #7dd3fc;
 	--border: #262b34;
-	--max-width: 1100px;
+	--max-width: 1280px;
 	color-scheme: dark;
 }
 
@@ -104,8 +104,16 @@ main {
 
 .project-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 1.75rem;
+}
+
+.project-slot {
+	position: relative;
+}
+
+.slot-spacer {
+	display: none;
 }
 
 .project-card {
@@ -116,12 +124,76 @@ main {
 	border: 1px solid var(--border);
 	border-radius: 10px;
 	overflow: hidden;
-	transition: transform 0.15s ease, border-color 0.15s ease;
+	transition: border-color 0.15s ease, box-shadow 0.2s ease;
 }
 
-.project-card:hover {
-	transform: translateY(-3px);
+.project-card:hover,
+.project-card:focus-visible {
 	border-color: var(--accent);
+}
+
+.project-card .card-text {
+	display: grid;
+	grid-template-rows: 1fr;
+}
+
+.project-card .card-text-inner {
+	overflow: hidden;
+	min-height: 0;
+}
+
+.project-card .card-text-content {
+	padding-bottom: 0.7rem;
+}
+
+.project-card .tag-list,
+.slot-spacer .tag-list {
+	margin-top: 0;
+}
+
+/* Mouse devices: show only the image and tags, and expand over the grid on hover.
+   Touch devices keep the full card always visible, since they can't hover. */
+@media (hover: hover) and (pointer: fine) {
+	.project-card {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		min-height: 100%;
+	}
+
+	.slot-spacer {
+		display: block;
+		visibility: hidden;
+		border: 1px solid transparent;
+		pointer-events: none;
+	}
+
+	.thumb-spacer {
+		aspect-ratio: 16 / 10;
+	}
+
+	.project-card .card-text {
+		grid-template-rows: 0fr;
+		opacity: 0;
+		transition: grid-template-rows 0.25s ease, opacity 0.2s ease;
+	}
+
+	.project-slot:hover,
+	.project-slot:focus-within {
+		z-index: 20;
+	}
+
+	.project-slot:hover .card-text,
+	.project-slot:focus-within .card-text {
+		grid-template-rows: 1fr;
+		opacity: 1;
+	}
+
+	.project-slot:hover .project-card,
+	.project-slot:focus-within .project-card {
+		box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+	}
 }
 
 .project-card .thumb {
@@ -136,12 +208,14 @@ main {
 	object-fit: cover;
 }
 
-.project-card .card-body {
+.project-card .card-body,
+.slot-spacer .card-body {
 	padding: 1rem 1.1rem 1.2rem;
 }
 
-.project-card h3 {
-	margin: 0 0 0.4rem;
+.project-card h3,
+.slot-spacer h3 {
+	margin: 0 0 0.5rem;
 	font-size: 1.05rem;
 }
 
@@ -183,6 +257,7 @@ main {
 	width: 100%;
 	border-radius: 10px;
 	border: 1px solid var(--border);
+	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
 
